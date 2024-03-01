@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,66 +9,30 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+
         }
+
         body{
             background-color: #343840;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
-            flex-direction: column;
-        }
-
-        .container{
-            border-radius: 18px;
-            display: flex;
-            flex-direction: column;
-            border: 1px solid rgba(255, 255, 255, 0.397);
-            padding: 100px 50px;
-       
-        }
-
-        h1{
-            color: white;
-            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-        }
-
-        input{
-            outline: none;
-            padding: 5px;
-            margin-top: 10px;
-        }
-
-        #mens{
-            margin-top: 10px;
-            text-align: center;
-            color: white;
-            font-family:'Gill Sans', 'Gill Sans MT', Calibri, 
-            'Trebuchet MS', sans-serif ;
-        }
-
-        #converte{
-            font-weight: bold;
-            border: none;
-            background-color: #6c7588;
-            color: white;
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>Real para Dolar</h1>
-        <input type="number" name="real" id="real" placeholder="Digite valor em real">
-        <input type="button" value="Converte" id="converte" onclick="conversao()">
-        <p id="mens"></p>
+       <h3>Conversâo</h3>
+       <input type="number" name="real" id="real">
+       <input type="button" value="Converte" onclick="conversao()">
     </div>
+    <p class="mensagem"></p>
     <script>
+
         function conversao(){
-            let real = document.querySelector('#real').value
-            let mens = document.querySelector('#mens')
-            let resu = real * 4.96
-            mens.innerHTML = `USD: ${resu.toFixed(2)}`
+            var valorReal = document.getElementById('real').value;
+            var mensagem = document.getElementsByClassName('.mensagem')
+            var valorDolar = 4.96;
+            var resultado = valorReal * valorDolar;
         }
+        
     </script>
 </body>
 </html>
