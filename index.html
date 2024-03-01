@@ -6,10 +6,17 @@
     <title>Document</title>
 </head>
 <body>
-    <h1 id="titu">Ola, mundo</h1>
-    <script>
-        var titulo = document.getElementsByTagName('#titu')
-        titulo.style.background = 'red'
-    </script>
+    <div class="container">
+        <h2>Conversão</h2>
+        <input type="number" name="real" id="real">
+        <input type="button" value="Converte">
+        <p class="mensagem"></p>
+    </div>
+        <script>
+            let valorReal = document.querySelector('#real')
+            let mensagem = document.getElementsByClassName('mensagem')
+            let valorDolar = 4.96;
+            let resultado = valorReal * valorDolar;
+        </script>
 </body>
 </html>
