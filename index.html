@@ -3,71 +3,58 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Conversão</title>
     <style>
-        *{
+        * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-
         }
 
-        body{
-            flex-direction: column;
+        body {
             background-color: #343840;
             display: flex;
             align-items: center;
             justify-content: center;
             height: 100vh;
-            
         }
 
-        h3{
-            color: white;
-            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-            margin-bottom: 17px;
-        }
-
-        .container{
+        .container {
             text-align: center;
-            display: flex;
-            flex-direction: column;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
 
-        #real{
-            padding: 10px;
+        .mensagem {
+            color: white;
+            font-size: 18px;
+            margin-top: 20px;
         }
-
-        #btn{
-            padding: 7px;
-            margin-top: 10px;
-        }
-
-        #mensagem{
-            margin-top: 10px;
-            color: aliceblue;
-            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-            
-        }
-
-
     </style>
 </head>
 <body>
     <div class="container">
-       <h3>Conversâo</h3>
-       <input type="number" name="real" id="real">
-       <input id="btn" type="button" value="Converte" onclick="conversao()">
+        <h3>Conversão</h3>
+        <input type="number" name="real" id="real">
+        <input type="button" value="Converter" onclick="conversao()">
     </div>
-    <p id="mensagem"></p>
+    <p class="mensagem"></p>
     <script>
-
-        function conversao(){
-            var valorReal = document.querySelector('#real').value;
-            var mensagem = document.querySelector('#mensagem')
+        function conversao() {
+            var valorReal = parseFloat(document.getElementById('real').value);
+            var mensagem = document.querySelector('.mensagem');
             var valorDolar = 4.96;
-            var resultado = valorReal * valorDolar;
-            mensagem.innerHTML = `USD: ${resultado.toFixed(2)}`
+
+            if (isNaN(valorReal)) {
+                mensagem.innerHTML = 'Por favor, insira um valor válido.';
+                mensagem.style.color = 'red';
+            } else {
+                var resultado = valorReal * valorDolar;
+                mensagem.innerHTML = `USD: ${resultado.toFixed(2)}`;
+                mensagem.style.color = 'green';
+            }
         }
     </script>
 </body>
