@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,26 +13,65 @@
         }
 
         body{
+            flex-direction: column;
             background-color: #343840;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            
         }
+
+        h3{
+            color: white;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            margin-bottom: 17px;
+        }
+
+        .container{
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+        }
+
+        #real{
+            padding: 10px;
+        }
+
+        #btn{
+            padding: 7px;
+            margin-top: 10px;
+        }
+
+        #mensagem{
+            margin-top: 10px;
+            color: aliceblue;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            
+        }
+
+
     </style>
 </head>
 <body>
     <div class="container">
        <h3>Conversâo</h3>
        <input type="number" name="real" id="real">
-       <input type="button" value="Converte" onclick="conversao()">
+       <input id="btn" type="button" value="Converte" onclick="conversao()">
     </div>
-    <p class="mensagem"></p>
+    <p id="mensagem"></p>
     <script>
 
         function conversao(){
-            var valorReal = document.getElementById('real').value;
-            var mensagem = document.getElementsByClassName('.mensagem')
+            var valorReal = document.querySelector('#real').value;
+            var mensagem = document.querySelector('#mensagem')
             var valorDolar = 4.96;
             var resultado = valorReal * valorDolar;
+            mensagem.innerHTML = `USD: ${resultado.toFixed(2)}`
+           
+            
+            
         }
-        
     </script>
 </body>
 </html>
