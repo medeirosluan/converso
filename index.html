@@ -22,5 +22,61 @@
         mensagem.innerHTML = `USD ${resultado.toFixed(2)}`;
     }
 </script>
+
+    <title>Conversão</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #343840;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        .container {
+            text-align: center;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .mensagem {
+            color: white;
+            font-size: 18px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h3>Conversão</h3>
+        <input type="number" name="real" id="real">
+        <input type="button" value="Converter" onclick="conversao()">
+    </div>
+    <p class="mensagem"></p>
+    <script>
+        function conversao() {
+            var valorReal = parseFloat(document.getElementById('real').value);
+            var mensagem = document.querySelector('.mensagem');
+            var valorDolar = 4.96;
+            mensagem.style.background = 'red'
+
+            if (isNaN(valorReal)) {
+                mensagem.innerHTML = 'Por favor, insira um valor válido.';
+                mensagem.style.color = 'red';
+            } else {
+                var resultado = valorReal * valorDolar;
+                mensagem.innerHTML = `USD: ${resultado.toFixed(2)}`;
+                mensagem.style.color = 'green';
+            }
+        }
+    </script>
 </body>
 </html>
