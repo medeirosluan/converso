@@ -1,82 +1,61 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-</head>
-<body>
-    <div class="container">
-        <h2>Conversão</h2>
-        <input type="number" name="real" id="real">
-        <input type="button" value="Converte" onclick="converte()">
-        <p id="mensagem"></p>
-    </div>
-        <script>
-       
-    function converte() {
-        let valorReal = parseFloat(document.querySelector('#real').value);
-        let mensagem = document.querySelector('.mensagem');
-        let valorDolar = 4.96;
-        let resultado = valorReal * valorDolar;
-        mensagem.innerHTML = `USD ${resultado.toFixed(2)}`;
-    }
-</script>
-
-    <title>Conversão</title>
     <style>
-        * {
+        *{
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
-        body {
-            background-color: #343840;
+        body{
             display: flex;
-            align-items: center;
             justify-content: center;
+            align-items: center;
             height: 100vh;
         }
 
-        .container {
-            text-align: center;
-            background-color: #fff;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        .container{
+            display: flex;
+            flex-direction: column;
         }
 
-        .mensagem {
-            color: white;
-            font-size: 18px;
-            margin-top: 20px;
+        h2{
+            text-align: center;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        }
+        #real{
+            margin-bottom: 10px;
+            padding: 7px;
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <h3>Conversão</h3>
-        <input type="number" name="real" id="real">
-        <input type="button" value="Converter" onclick="conversao()">
+        <h2>Conversao</h2>
+        <input type="number" name="real" id="real" placeholder="Digite valor em real">
+        <p id="mensagem"></p>
+        <input type="button" value="Converte" onclick="conversao()">
     </div>
-    <p class="mensagem"></p>
-    <script>
-        function conversao() {
-            var valorReal = parseFloat(document.getElementById('real').value);
-            var mensagem = document.querySelector('.mensagem');
-            var valorDolar = 4.96;
-            mensagem.style.background = 'red'
 
-            if (isNaN(valorReal)) {
-                mensagem.innerHTML = 'Por favor, insira um valor válido.';
-                mensagem.style.color = 'red';
-            } else {
-                var resultado = valorReal * valorDolar;
-                mensagem.innerHTML = `USD: ${resultado.toFixed(2)}`;
-                mensagem.style.color = 'green';
+
+        <script>
+
+            function Conversao(){
+                var valorReal = document.getElementById('#real')
+                var mensagenm = document.getElementById('#mensagem')
+                var valorDolar = 4.96
+                var resultado = valorReal * valorDolar
+                
+
             }
-        }
-    </script>
+        </script>
+
+
+  
+    
 </body>
 </html>
