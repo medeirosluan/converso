@@ -9,14 +9,18 @@
     <div class="container">
         <h2>Conversão</h2>
         <input type="number" name="real" id="real">
-        <input type="button" value="Converte">
-        <p class="mensagem"></p>
+        <input type="button" value="Converte" onclick="converte()">
+        <p id="mensagem"></p>
     </div>
         <script>
-            let valorReal = document.querySelector('#real')
-            let mensagem = document.getElementsByClassName('mensagem')
-            let valorDolar = 4.96;
-            let resultado = valorReal * valorDolar;
-        </script>
+       
+    function converte() {
+        let valorReal = parseFloat(document.querySelector('#real').value);
+        let mensagem = document.querySelector('.mensagem');
+        let valorDolar = 4.96;
+        let resultado = valorReal * valorDolar;
+        mensagem.innerHTML = `USD ${resultado.toFixed(2)}`;
+    }
+</script>
 </body>
 </html>
